@@ -22,8 +22,21 @@
             $.mobile.loadPage( index.html, { showLoadMsg: false } );        })
            var isAbs = $.mobile.path.isAbsoluteUrl("http://www.app4brides.com/mall/index.php");
            var isAbs = $.mobile.path.isAbsoluteUrl("http://app4brides.com/checklists.html");
-           $.mobile.silentScroll(200);
-$.mobile.allowCrossDomainPages = true;
+          
+           $.mobile.changePage(
+    window.location.href,
+    {
+      allowCrossDomainPages = true;
+      transition              : 'none',
+      showLoadMsg             : false,
+      reverse             : true
+      $.mobile.linkBindingEnabled = true;
+      $.mobile.pushStateEnabled =false;
+    }
+  );
+
+          
+
 $.support.cors = true;
 $.mobile.buttonMarkup.hoverDelay = 0;
 $.mobile.phonegapNavigationEnabled = true
@@ -38,7 +51,18 @@ function onButtonTap(e)
 
     </script>
 <script src="js/jquery.mobile.simultaneous-transitions-replace-simple.js"></script>
-<script src="js/fastclick.js"></script> 
+<script src="js/fastclick.js"></script>
+<script type="application/javascript">
+	window.addEventListener('load', function() {
+		new FastClick(document.getElementById('fastclick'));
+		Array.prototype.forEach.call(document.getElementsByClassName('test'), function(testEl) {
+			testEl.addEventListener('click', function() {
+				testEl.style.backgroundColor = testEl.style.backgroundColor ? '' : 'YellowGreen';
+			}, false)
+		});
+	}, false);
+</script>
+ 
    <script src="js/jquery.mobile-1.2.0.min.js"></script>        
         
 </head>
@@ -51,8 +75,8 @@ function onButtonTap(e)
             </div>
                 <div class="mvv-navbar mvv-edge-to-edge" data-role="navbar">
                     <ul>
-                        <li><a class="" data-theme="c" rel="external" href="http://www.app4brides.com/checklists.html" data-prefetch>CHECKLISTS</a></li>
-                        <li><a class="ui-btn-active" data-theme="c" rel="external" href="http://www.app4brides.com/mall/index.php" data-prefetch>THE MALL</a></li>
+                        <li><a class="ui-btn-active" data-theme="c" href="#">WELCOME</a></li>
+                       
                     </ul>
                 </div>
             <!-- end header -->
@@ -61,8 +85,7 @@ function onButtonTap(e)
             <div id="about">
     <h3>
          <span class="mvv-light-green">APP4BRIDES</span></h3>
-    <p>Your Wedding plans are categorized under different activities or item.  Click on the applicable activity or item. The buttons before or after  an activity or item indicates there are sub categories under. You can write, edit, delete and store notes in your device  by clicking on the sub activity or item in blue.
-				<br /><br />Welcome to APP4BRIDES. Congratulations!!!!!!! This is 
+    <p>Welcome to APP4BRIDES. Congratulations!!!!!!! This is 
 probably the most exciting time
 of your life!!!!!!!! And we at <span class="mvv-light-green">
 FEMININE EDGE</span> thought it shouldn&#39;t
@@ -80,9 +103,9 @@ your phone, tablets or desktop. Also visit <span class="mvv-light-green">APP4BRI
 
                 <ul data-role="listview">
                 
-                    <li><a href="http://www.app4brides.com/checklists.html">CHECKLISTS</a></li>
+                    <li><a href="http://www.app4brides.com/checklists.html" data-role="button" id="fastclick">BEGIN WEDDING PLANNING</a></li>
                     
-                   <li><a href="http://www.app4brides.com/mall/index.php">THE MALL</a></li>
+                   
 
                 </ul>
         </div>

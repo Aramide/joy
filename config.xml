@@ -19,7 +19,7 @@ xmlns="http://www.w3.org/ns/widgets">
 <preference name="detect-data-types" value="true"/>
  <preference name="splash-screen-duration" value="2000" />
 
-<gap:plugin name="ChildBrowser" version="3.0.4" /
+<gap:plugin name="ChildBrowser" version="3.0.4" />
 
 <icon src="icon.png"/> 
 <icon src="icons/ios/icon.png" height="57" width="57"/> 

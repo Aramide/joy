@@ -6,14 +6,7 @@
     <!--[if IE 7]><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><![endif]-->
     <title>App4brides</title>
     <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
-    <style>
     
-   .ui-page { -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -highlight-color: rgba(0,0,0,0); 
-    }
-    </style>
-
     
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&amp;v1' rel='stylesheet' type='text/css'/>
     <link href="css/Site.min.css" rel="stylesheet" type="text/css" />
@@ -26,24 +19,10 @@
             $.mobile.getMaxScrollForTransition = none;
             $.defaultPageTransition = none;
             $.defaultDialogTransition = none;
-            $.mobile.loadPage( index.html, { showLoadMsg: false } );        })
+            
            var isAbs = $.mobile.path.isAbsoluteUrl("http://www.app4brides.com/mall/index.php");
-           var isAbs = $.mobile.path.isAbsoluteUrl("http://app4brides.com/checklists.html");
-          
-           $.mobile.changePage(
-    window.location.href,
-    {
-      allowCrossDomainPages = true;
-      transition              : 'none',
-      showLoadMsg             : false,
-      reverse             : true
-      $.mobile.linkBindingEnabled = true;
-      $.mobile.pushStateEnabled =false;
-    }
-  );
-
-          
-
+           var isAbs = $.mobile.path.isAbsoluteUrl("http://app4brides.com/checklists.html");       
+$.mobile.allowCrossDomainPages = true;
 $.support.cors = true;
 $.mobile.buttonMarkup.hoverDelay = 0;
 $.mobile.phonegapNavigationEnabled = true
@@ -110,7 +89,7 @@ your phone, tablets or desktop. Also visit <span class="mvv-light-green">APP4BRI
 
                 <ul data-role="listview">
                 
-                    <li><a href="http://www.app4brides.com/checklists.html" data-role="button" id="fastclick">BEGIN WEDDING PLANNING</a></li>
+                    <li><a href="http://app4brides.com/checklists.html" data-role="button" id="fastclick">BEGIN WEDDING PLANNING</a></li>
                     
                    
 

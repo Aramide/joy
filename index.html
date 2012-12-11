@@ -36,21 +36,12 @@ function onButtonTap(e)
   });
 
     </script>
+    
 <script src="js/jquery.mobile.simultaneous-transitions-replace-simple.js"></script>
-<script src="js/fastclick.js"></script>
-<script type="application/javascript">
-	window.addEventListener('load', function() {
-		new FastClick(document.getElementById('fastclick'));
-		Array.prototype.forEach.call(document.getElementsByClassName('test'), function(testEl) {
-			testEl.addEventListener('click', function() {
-				testEl.style.backgroundColor = testEl.style.backgroundColor ? '' : 'YellowGreen';
-			}, false)
-		});
-	}, false);
-</script>
- 
+
    <script src="js/jquery.mobile-1.2.0.min.js"></script>        
-        
+    <script src="phonegap.js"></script>
+<script src="childbrowser.js"></script>    
 </head>
 <body>
     <div data-role="page" data-theme="c">
@@ -89,7 +80,7 @@ your phone, tablets or desktop. Also visit <span class="mvv-light-green">APP4BRI
 
                 <ul data-role="listview">
                 
-                    <li><a href="http://app4brides.com/checklists.html" rel="external" data-role="button" id="fastclick">BEGIN WEDDING PLANNING</a></li>
+                    <li><a href="#" onClick="window.plugins.childBrowser.showWebPage('http://www.app4brides.com/checklists.html');"><p>BEGIN WEDDING PLANNING</p></a></li>
                     
                    
 

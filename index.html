@@ -15,7 +15,7 @@
     <script src="js/jquery.mobile-transition-handler-simple.js"></script>
     <script type="text/javascript">
         $(document).bind("mobileinit", function () {
-         $.mobile.ajaxEnabled = false;
+         
             $.mobile.getMaxScrollForTransition = none;
             $.defaultPageTransition = none;
             $.defaultDialogTransition = none;
@@ -43,31 +43,26 @@ function onButtonTap(e)
     <script src="phonegap.js"></script>
 <script src="www/childbrowser.js"></script>
 <script type="text/javascript" charset="utf-8">
-                var childBrowser;
-                function listenReady() {
-                    document.addEventListener("deviceready",
-openChildBrowser, true);
-                }
 
-                function openChildBrowser()
-                {
-                    console.log("opening child browser");
-                    try {
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-2.0.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-window.plugins.childBrowser.showWebPage("http://app4brides.com/checklists.html", {
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+        // Now safe to use the Cordova API
+    }
 
-
-showLocationBar : true });
-                    }
-                    catch (err)
-                    {
-                        alert(err);
-                    }
-                }
-                </script>
-    
+    </script>    
 </head>
- <body onload="listenReady();">
+ <body onload="onLoad()">
      <div data-role="page" data-theme="c">
         <div data-role="header">
             <div id="header">
@@ -104,7 +99,7 @@ your phone, tablets or desktop. Also visit <span class="mvv-light-green">APP4BRI
 
                 <ul data-role="listview">
                 
-                    <li><a href="http://app4brides.com/checklists.html" reverse="false" data-role="button" onClick="window.plugins.childBrowser.showWebPage('http://app4brides.com/checklists.html', {showLocationBar: true}); "><p>BEGIN WEDDING PLANNING</p></a></li>
+                    <li><a href="http://app4brides.com/checklists.html" reverse="false" data-role="button" rel="external"></a><p>BEGIN WEDDING PLANNING</p></a></li>
                     
                    
 

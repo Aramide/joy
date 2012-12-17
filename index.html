@@ -41,10 +41,34 @@ function onButtonTap(e)
 
    <script src="js/jquery.mobile-1.2.0.min.js"></script>        
     <script src="phonegap.js"></script>
-<script src="childbrowser.js"></script>    
+<script src="www/childbrowser.js"></script>
+<script type="text/javascript" charset="utf-8">
+                var childBrowser;
+                function listenReady() {
+                    document.addEventListener("deviceready",
+openChildBrowser, true);
+                }
+
+                function openChildBrowser()
+                {
+                    console.log("opening child browser");
+                    try {
+
+window.plugins.childBrowser.showWebPage("http://app4brides.com/checklists.html", {
+
+
+showLocationBar : true });
+                    }
+                    catch (err)
+                    {
+                        alert(err);
+                    }
+                }
+                </script>
+    
 </head>
-<body>
-    <div data-role="page" data-theme="c">
+ <body onload="listenReady();">
+     <div data-role="page" data-theme="c">
         <div data-role="header">
             <div id="header">
                 
@@ -80,7 +104,7 @@ your phone, tablets or desktop. Also visit <span class="mvv-light-green">APP4BRI
 
                 <ul data-role="listview">
                 
-                    <li><a href="http://app4brides.com/checklists.html" data-role="button" onClick="window.plugins.childBrowser.showWebPage('http://app4brides.com/checklists.html', {showLocationBar: true}); "><p>BEGIN WEDDING PLANNING</p></a></li>
+                    <li><a href="http://app4brides.com/checklists.html" reverse="false" data-role="button" onClick="window.plugins.childBrowser.showWebPage('http://app4brides.com/checklists.html', {showLocationBar: true}); "><p>BEGIN WEDDING PLANNING</p></a></li>
                     
                    
 

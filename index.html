@@ -15,7 +15,7 @@
     <script src="js/jquery.mobile-transition-handler-simple.js"></script>
     <script type="text/javascript">
         $(document).bind("mobileinit", function () {
-         
+          $.mobile.ajaxEnabled = false;
             $.mobile.getMaxScrollForTransition = none;
             $.defaultPageTransition = none;
             $.defaultDialogTransition = none;
@@ -99,7 +99,7 @@ your phone, tablets or desktop. Also visit <span class="mvv-light-green">APP4BRI
 
                 <ul data-role="listview">
                 
-                    <li><a href="http://app4brides.com/checklists.html" reverse="false" data-role="button" rel="external"></a><p>BEGIN WEDDING PLANNING</p></a></li>
+                    <li><a href="http://app4brides.com/checklists.html" target="blank" data-role="button" rel="external"></a><p>BEGIN WEDDING PLANNING</p></a></li>
                     
                    
 

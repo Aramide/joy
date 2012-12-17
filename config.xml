@@ -11,7 +11,7 @@ xmlns="http://www.w3.org/ns/widgets">
  
 
 <feature name="http://api.phonegap.com/1.0/device" />
-<feature name="http://plugins.phonegap.com/ChildBrowser/3.0.4" />
+
  
 <preference name="phonegap-version" value="2.2.0"/> 
 <preference name="orientation" value="default"/> 
@@ -20,10 +20,11 @@ xmlns="http://www.w3.org/ns/widgets">
 <preference name="detect-data-types" value="true"/>
  
 <preference name="stay-in-webview" value="true" />
+<preference name="splash-screen-duration" value="2000" />
 
-<gap:plugin name="ChildBrowser" version="3.0.4" />
 
-<access uri="*" subdomains="true" />
+<access origin="*" /> <!-- allow any domains -->
+<access origin="http://app4brides.com" /> <!-- allow phonegap.com -->
 
 <icon src="icon.png"/> 
 <icon src="icons/ios/icon.png" height="57" width="57"/> 
